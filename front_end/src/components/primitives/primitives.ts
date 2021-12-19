@@ -19,7 +19,7 @@ const HeroImage = styled.img`
 
 const HeroContainer = styled.div`
 	width: 100%;
-	position: absolute;
+	position: relative;
     top: 0;
     text-align: center;
 
@@ -47,23 +47,15 @@ const HeroText = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: ${({theme}) => theme.colors.white};
 `;
 
-const HeroButton = styled.button`
+const HeroButton = styled.div`
     position: absolute;
     bottom: ${({theme}) => theme.factor(8)};
     right: ${({theme}) => theme.factor(16)};
-    order: none;
     outline: 0;
-    display: inline-block;
-    padding: ${({theme}) => `${theme.factor(1.25)} ${theme.factor(3)}`};
-    color: ${({theme}) => theme.colors.white};
-    background-color: #0E0E0E;
-    text-align: center;
-    text-transform: uppercase;
-    cursor: pointer;
-    border: 1px solid ${({theme}) => theme.colors.black.dark};
+    background: transparent;
 
     @media ${device.mobileL} {
         position: relative;
@@ -162,7 +154,7 @@ const SvgContainer = styled.div<{
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        z-index: 100;
+        cursor: pointer;
         & svg {
             height: ${props => (props.height ? `${props.height}px` : "100%")};
             width: ${props => (props.width ? `${props.width}px` : "100%")};
@@ -174,9 +166,22 @@ const MenuText = styled.span`
     font-family: sans-serif;
     font-weight: 500;
     padding: ${({theme}) => `0 ${theme.factor(1)}`};
-`
+`;
+
+const Button = styled.button<{color?: string;}>`
+    display: inline-block;
+    color: ${({theme}) => theme.colors.white};
+    padding: ${({theme}) => `${theme.factor(1.25)} ${theme.factor(3)}`};
+    background-color: ${(props) => props.color};
+    background-color: #0E0E0E;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1px solid ${(props) => props.color};
+`;
 
 export {
+    Button,
     CardLink,
     CartTitle,
     Container,

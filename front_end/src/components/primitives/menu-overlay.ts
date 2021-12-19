@@ -12,6 +12,7 @@ const MenuOverlay = styled.div<{
     top: 0;
     background-color: rgb(0,0,0);
     overflow-x: hidden;
+    transition: 0.5s;
     &:hover {
         color: #f1f1f1;
     }
@@ -26,6 +27,7 @@ const MenuLinks = styled.li`
     line-height: 1.25;
     color: #818181;
     display: block;
+    transition: 0.3s;
     cursor: pointer;
     &:hover {
         color: #f1f1f1;
@@ -94,7 +96,7 @@ const DrawerMenu = styled.div`
     overflow-x: hidden;
     box-shadow: 0 0 3px rgb(18 18 18 / 20%);
     -webkit-font-smoothing: antialiased;
-    transition: transform .3s ease-in-out,opacity .3s ease-in-out;
+    transition: transform 1s ease-in-out,opacity .3s ease-in-out;
 `;
 
 const LogoGrid = styled.div`

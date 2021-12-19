@@ -12,7 +12,7 @@ const Header: VFC = () => {
         <>
             <Styled.NavHeader>
                 <Styled.ContainerFlex>
-                    <Styled.DeptLogo width={72} />
+                    <Styled.DeptLogoBlack width={72} />
                     <Styled.ContainerEnd>
                         <Styled.MenuText>menu</Styled.MenuText>
                         <Styled.HamburgerIcon openMenu={toggleMenu} width={35} />

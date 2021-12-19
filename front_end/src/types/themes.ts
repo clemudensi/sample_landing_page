@@ -16,4 +16,4 @@ interface ThemeProps {
     factor: (arg: number) => string;
 }
 
-export type { ThemeProps };
+export type { Colors, ThemeProps };

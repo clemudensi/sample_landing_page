@@ -11,4 +11,8 @@ export const GlobalStyles = createGlobalStyle`
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
+	::selection {
+		background-color: #1A18F7;
+		color: #FFF
+	}
 `;

@@ -10,7 +10,6 @@ interface OverlayProps {
 const MenuDrawer: VFC<OverlayProps> = ({ open, closeMenu }) => {
     return (
         <Styled.MenuOverlay open={open}>
-
             <Styled.DrawerMenu>
                 <Styled.LogoGrid>
                     <Styled.DeptLogoWhite />
