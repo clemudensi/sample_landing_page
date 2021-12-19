@@ -1,26 +1,26 @@
 import { VFC, useState } from 'react';
 import * as Styled from 'components';
-import { MenuDrawer } from 'components';
 
 const Header: VFC = () => {
     const [open, setOpen] = useState(false);
 
     const toggleMenu = () => {
-        console.log('I was clicked')
         setOpen(!open)
     };
 
     return (
         <>
             <Styled.NavHeader>
-                <Styled.Container>
-                    <Styled.DeptLogo />
+                <Styled.ContainerFlex>
+                    <Styled.DeptLogo width={72} />
                     <Styled.ContainerEnd>
                         <Styled.MenuText>menu</Styled.MenuText>
-                        <Styled.HamburgerIcon openMenu={toggleMenu} /></Styled.ContainerEnd>
-                </Styled.Container>
+                        <Styled.HamburgerIcon openMenu={toggleMenu} width={35} />
+                    </Styled.ContainerEnd>
+                </Styled.ContainerFlex>
+                <Styled.HorizontalLine width='100%' height='.07rem' color='black' />
             </Styled.NavHeader>
-            <MenuDrawer open={open} closeMenu={toggleMenu} />
+            <Styled.MenuDrawer open={open} closeMenu={toggleMenu} />
         </>
     )
 };

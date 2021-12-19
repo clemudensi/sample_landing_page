@@ -1,5 +1,6 @@
 import { styled } from 'theme';
 import { HtmlAttr } from 'types';
+import { device } from './breakpoints';
 
 const HeroImage = styled.img`
     height: 50%;
@@ -7,19 +8,35 @@ const HeroImage = styled.img`
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    padding: ${({theme}) => theme.factor(1)};
+    padding: ${({theme}) => theme.factor(2)};
     width: inherit;
+
+    @media ${device.mobileL} {
+        max-width: 450px;
+        padding: 0;
+    }
 `;
 
 const HeroContainer = styled.div`
+	width: 100%;
+	position: absolute;
+    top: 0;
+    text-align: center;
+
+    @media ${device.mobileL} {
+        max-width: 450px;
+        position: relative;
+    }
+`;
+
+const ContainerFlex = styled.div`
 	display: flex;
 	width: 100%;
-	position: relative;
-    margin-top: -${({theme}) => theme.factor(10.625)};
+	align-items: center;
 `;
 
 const Container = styled.div`
-	display: flex;
+	display: inherit;
 	width: 100%;
 	align-items: center;
 `;
@@ -35,8 +52,8 @@ const HeroText = styled.div`
 
 const HeroButton = styled.button`
     position: absolute;
-    bottom: ${({theme}) => theme.factor(8)};;
-    right: ${({theme}) => theme.factor(16)};;
+    bottom: ${({theme}) => theme.factor(8)};
+    right: ${({theme}) => theme.factor(16)};
     order: none;
     outline: 0;
     display: inline-block;
@@ -47,6 +64,12 @@ const HeroButton = styled.button`
     text-transform: uppercase;
     cursor: pointer;
     border: 1px solid ${({theme}) => theme.colors.black.dark};
+
+    @media ${device.mobileL} {
+        position: relative;
+        bottom: 0;
+        right: 0;
+    }
 `;
 
 const HorizontalLine = styled.hr<HtmlAttr>`
@@ -55,7 +78,12 @@ const HorizontalLine = styled.hr<HtmlAttr>`
     margin-left: 0;
     border: none;
     height: ${(props) => props.height};
-    background-color: ${(props) => props.color}
+    background-color: ${(props) => props.color};
+    margin-top: ${({theme}) => theme.factor(3)};
+
+    @media ${device.mobileL} {
+        display: none;
+    }
 `;
 
 const ContentCardWrapper = styled.div`
@@ -98,11 +126,18 @@ const CardLink = styled.span`
 
 const NavHeader = styled.div`
     padding: ${({theme}) => `${theme.factor(8)} ${theme.factor(8)} 0 ${theme.factor(8)}`};
-    position: sticky;
-    top: 0;
     background-color: ${({theme}) => theme.colors.transparent};
     z-index: 99;
-`
+    position: fixed;
+    width: -webkit-fill-available;
+
+    @media ${device.mobileL} {
+        max-width: 450px;
+        position: relative;
+        padding: ${({theme}) => `${theme.factor(2)} ${theme.factor(2)} ${theme.factor(2)} ${theme.factor(2)}`};
+    }
+
+`;
 
 const ImageContainer = styled.img`
 	width: 100%;
@@ -118,6 +153,7 @@ const ImageContainer = styled.img`
 `;
 
 const SvgContainer = styled.div<{
+    color?: string;
     height?: number
     width?: number
     }>`
@@ -126,7 +162,7 @@ const SvgContainer = styled.div<{
         display: inline-flex;
         align-items: center;
         justify-content: center;
-
+        z-index: 100;
         & svg {
             height: ${props => (props.height ? `${props.height}px` : "100%")};
             width: ${props => (props.width ? `${props.width}px` : "100%")};
@@ -144,6 +180,7 @@ export {
     CardLink,
     CartTitle,
     Container,
+    ContainerFlex,
     ContentCardWrapper,
     ContainerEnd,
     ImageContainer,

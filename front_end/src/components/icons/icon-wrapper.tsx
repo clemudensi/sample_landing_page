@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { SvgContainer } from 'components';
-import { SVGProps } from 'types';
+import { IconWrapperProps } from 'types';
 
-const IconWrapper: FC<SVGProps> = props => {
+const IconWrapper: FC<IconWrapperProps> = props => {
     const { Icon, onClick } = props
     return (
         <SvgContainer {...props}>

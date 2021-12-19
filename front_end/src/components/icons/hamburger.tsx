@@ -1,14 +1,15 @@
 import { VFC } from 'react';
 import { IconWrapper } from '.';
+import { SVGProps } from 'types';
 import { ReactComponent as Hamburger }  from 'assets/svg/dept_icon_menu.svg';
 
-type HamburgerProps = {
+interface HamburgerProps extends SVGProps{
     openMenu: () => void;
 }
 
-const HamburgerIcon: VFC<HamburgerProps> = ({ openMenu }) => {
+const HamburgerIcon: VFC<HamburgerProps> = ({ openMenu, width }) => {
     return (
-        <IconWrapper Icon={Hamburger} width={35} onClick={openMenu} />
+        <IconWrapper Icon={Hamburger} width={width} onClick={openMenu} />
     )
 };
 
