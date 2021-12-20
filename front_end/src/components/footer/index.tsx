@@ -17,9 +17,9 @@ const Footer: VFC = () => {
                     </Styled.Content1Grid>
                     <Styled.IconGrid>
                         <Styled.IconSubGrid>
-                            <Styled.FaceBook width={16} color='#FFF' />
-                            <Styled.Twitter width={16} color='#FFF' />
-                            <Styled.Instagram width={16} color='#FFF' />
+                            <Styled.FaceBook width={16} height={0} color='#FFF'/>
+                            <Styled.Twitter width={16} height={0} color='#FFF' />
+                            <Styled.Instagram width={16} height={0} color='#FFF' />
                         </Styled.IconSubGrid>
                     </Styled.IconGrid>
                     <Styled.Content2Grid>

@@ -59,15 +59,14 @@ const Content2Grid = styled.div`
     color: #808080;
     grid-area: content2;
     display: flex;
-    font-size: 0.7rem;
     justify-content: space-between;
     cursor: pointer;
+    font-size: calc(${props  => props.theme.factor(1)} + 0.5vw/50%);
 
     @media ${device.mobileL} {
         inline-size: 200px;
         overflow-wrap: break-word;
         display: grid;
-        font-size: ${({theme}) => theme.factor(2)};
         font-size: 1rem;
         grid-row-gap: .7rem;
     }

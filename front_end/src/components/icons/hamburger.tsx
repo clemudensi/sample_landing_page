@@ -7,9 +7,9 @@ interface HamburgerProps extends SVGProps{
     openMenu: () => void;
 }
 
-const HamburgerIcon: VFC<HamburgerProps> = ({ openMenu, width }) => {
+const HamburgerIcon: VFC<HamburgerProps> = ({ height, openMenu, width }) => {
     return (
-        <IconWrapper Icon={Hamburger} width={width} onClick={openMenu} />
+        <IconWrapper Icon={Hamburger} width={width} onClick={openMenu} height={height} />
     )
 };
 

@@ -15,10 +15,10 @@ const Header: VFC = () => {
                     <Styled.DeptLogoBlack width={72} />
                     <Styled.ContainerEnd>
                         <Styled.MenuText>menu</Styled.MenuText>
-                        <Styled.HamburgerIcon openMenu={toggleMenu} width={35} />
+                        <Styled.HamburgerIcon openMenu={toggleMenu} width={15} />
                     </Styled.ContainerEnd>
                 </Styled.ContainerFlex>
-                <Styled.HorizontalLine width='100%' height='.07rem' color='black' />
+                <Styled.HorizontalLine width='100%' height='.05rem' color='black' />
             </Styled.NavHeader>
             <Styled.MenuDrawer open={open} closeMenu={toggleMenu} />
         </>

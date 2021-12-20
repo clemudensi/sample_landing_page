@@ -170,6 +170,7 @@ const Form: VFC = () => {
                         <Styled.FormInput name='message' onChange={handleOnchange} value={message} type="text" />
                         <Styled.ErrorLabel message={messageError} />
                     </Styled.InputGrid>
+                    <Styled.Button color='#1A18F7' width='3'>send</Styled.Button>
             </Styled.FormContainer>
         </Styled.FormSection>
     )

@@ -156,8 +156,8 @@ const SvgContainer = styled.div<{
         justify-content: center;
         cursor: pointer;
         & svg {
-            height: ${props => (props.height ? `${props.height}px` : "100%")};
-            width: ${props => (props.width ? `${props.width}px` : "100%")};
+            height: ${props => (props.height ? `calc(6vw/${props.height} + 5vw)` : null)};
+            width: ${props => (props.width ? `calc(.5rem + ${props.width}px)` : `calc(4vw/0.5)`)};
         }
 `;
 
@@ -168,16 +168,35 @@ const MenuText = styled.span`
     padding: ${({theme}) => `0 ${theme.factor(1)}`};
 `;
 
-const Button = styled.button<{color?: string;}>`
+const Button = styled.button<{color?: string; width?: string;}>`
     display: inline-block;
     color: ${({theme}) => theme.colors.white};
     padding: ${({theme}) => `${theme.factor(1.25)} ${theme.factor(3)}`};
     background-color: ${(props) => props.color};
-    background-color: #0E0E0E;
     text-align: center;
     text-transform: uppercase;
     cursor: pointer;
     border: 1px solid ${(props) => props.color};
+    width: ${props => (props.width ? `calc(${props.width}*10%)`: '100')};
+`;
+
+const DefaultTypography = styled.div<{
+    fontSize?: string;
+    color?: string;
+    transform?: boolean;
+}>`
+    font-size: calc(${(props) => props.fontSize}vw + ${(props) => props.fontSize}rem * 0.4);
+    text-transform: uppercase;
+    color: ${(props) => props.color};
+    text-transform: ${props => (props.transform ? 'uppercase': 'none')};
+    max-width: 40%;
+    inline-size: 6wv;
+    overflow-wrap: break-word;
+    padding: 1vw 0;
+`;
+
+const DefaultSectionWrapper = styled.div`
+    margin: 3vw 0;
 `;
 
 export {
@@ -188,6 +207,8 @@ export {
     ContainerFlex,
     ContentCardWrapper,
     ContainerEnd,
+    DefaultSectionWrapper,
+    DefaultTypography,
     ImageContainer,
     HeroButton,
     HeroContainer,
@@ -198,4 +219,4 @@ export {
     NavHeader,
     SubTitle,
     SvgContainer
-}
+};

@@ -8,7 +8,7 @@ const size = {
     tablet: '768px'
 };
 
-export const device = {
+const device = {
     desktop: `(max-width: ${size.desktop})`,
     desktopL: `(max-width: ${size.desktop})`,
     laptop: `(max-width: ${size.laptop})`,
@@ -18,3 +18,5 @@ export const device = {
     mobileS: `(max-width: ${size.mobileS})`,
     tablet: `(max-width: ${size.tablet})`
 };
+
+export { device, size };

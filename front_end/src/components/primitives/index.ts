@@ -1,4 +1,5 @@
 export * from './breakpoints';
+export * from './clients';
 export * from './collapsible';
 export * from './footer';
 export * from './form';

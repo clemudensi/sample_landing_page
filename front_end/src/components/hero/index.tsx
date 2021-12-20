@@ -10,7 +10,7 @@ const HeroSection: VFC = () => {
                 <Styled.HeroImage src={deptHeroImage} alt="dept-hero" />
                 <Styled.WorkImage src={workImage} alt="work" />
                 <Styled.HeroButton>
-                    <Styled.Button color='black'>view case</Styled.Button>
+                    <Styled.Button color='black' width='10'>view case</Styled.Button>
                 </Styled.HeroButton>
             </Styled.HeroContainer>
         </>
