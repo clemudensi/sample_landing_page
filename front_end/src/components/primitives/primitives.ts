@@ -33,12 +33,29 @@ const ContainerFlex = styled.div`
 	display: flex;
 	width: 100%;
 	align-items: center;
+    justify-content: space-between;
 `;
 
 const Container = styled.div`
 	display: inherit;
 	width: 100%;
 	align-items: center;
+`;
+
+const ContainerResizable = styled.div<{
+    position?: string;
+    width?: string;
+    padding?: string;
+    margin?: string;
+    display?: string;
+}>`
+    justify-content: ${props => (props.position ? props.position : 'center')};
+    display: flex;
+    width: 100%;
+    width: ${props => (props.width ? props.width : '100%')};
+    display: ${props => (props.display ? props.display : 'flex')};
+    padding: ${props => (props.padding ? props.padding : 0)};
+    margin: ${props => (props.margin ? props.margin : 0)};
 `;
 
 const HeroText = styled.div`
@@ -135,13 +152,7 @@ const ImageContainer = styled.img`
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	max-width: 100%;
-	max-height: 100%;
 	display: block;
-
-	@media (max-width: 480px) {
-		height: 50px
-	}
 `;
 
 const SvgContainer = styled.div<{
@@ -157,7 +168,7 @@ const SvgContainer = styled.div<{
         cursor: pointer;
         & svg {
             height: ${props => (props.height ? `calc(6vw/${props.height} + 5vw)` : null)};
-            width: ${props => (props.width ? `calc(.5rem + ${props.width}px)` : `calc(4vw/0.5)`)};
+            width: ${props => (props.width ? `calc(1.5vw + ${props.width}px)` : `calc(4vw/0.5)`)};
         }
 `;
 
@@ -168,10 +179,14 @@ const MenuText = styled.span`
     padding: ${({theme}) => `0 ${theme.factor(1)}`};
 `;
 
-const Button = styled.button<{color?: string; width?: string;}>`
+const Button = styled.button<{
+    color?: string;
+    width?: string;
+    padding?: string;
+}>`
     display: inline-block;
     color: ${({theme}) => theme.colors.white};
-    padding: ${({theme}) => `${theme.factor(1.25)} ${theme.factor(3)}`};
+    padding: ${(props) => props.padding ? `calc(${props.padding}px + ${props.padding}*0.5px)`: `${props.theme.factor(1.5)} ${props.theme.factor(3)}`};
     background-color: ${(props) => props.color};
     text-align: center;
     text-transform: uppercase;
@@ -183,20 +198,26 @@ const Button = styled.button<{color?: string; width?: string;}>`
 const DefaultTypography = styled.div<{
     fontSize?: string;
     color?: string;
-    transform?: boolean;
+    transform?: string;
+    fontWeight?: number;
 }>`
     font-size: calc(${(props) => props.fontSize}vw + ${(props) => props.fontSize}rem * 0.4);
     text-transform: uppercase;
     color: ${(props) => props.color};
-    text-transform: ${props => (props.transform ? 'uppercase': 'none')};
-    max-width: 40%;
-    inline-size: 6wv;
+    text-transform: ${props => (props.transform ? props.transform : 'none')};
     overflow-wrap: break-word;
-    padding: 1vw 0;
+    font-weight:  ${(props) => props.fontWeight};
+    padding: calc(1vw * ${(props) => props.fontSize}) 0;
 `;
 
 const DefaultSectionWrapper = styled.div`
     margin: 3vw 0;
+`;
+
+const GridCol2 = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1.5vw;
 `;
 
 export {
@@ -207,8 +228,10 @@ export {
     ContainerFlex,
     ContentCardWrapper,
     ContainerEnd,
+    ContainerResizable,
     DefaultSectionWrapper,
     DefaultTypography,
+    GridCol2,
     ImageContainer,
     HeroButton,
     HeroContainer,

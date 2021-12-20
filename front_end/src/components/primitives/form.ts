@@ -52,7 +52,7 @@ const FormContainer = styled.div`
     width 50%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(2, auto);
-    grid-gap: 2rem;
+    grid-gap: 3.5rem;
     grid-template-areas:
         "name email"
         "message message";

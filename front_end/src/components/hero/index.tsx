@@ -6,7 +6,7 @@ import * as Styled from 'components';
 const HeroSection: VFC = () => {
     return (
         <>
-            <Styled.HeroContainer>
+            <Styled.HeroContainer id='hero-section'>
                 <Styled.HeroImage src={deptHeroImage} alt="dept-hero" />
                 <Styled.WorkImage src={workImage} alt="work" />
                 <Styled.HeroButton>

@@ -17,9 +17,9 @@ const Footer: VFC = () => {
                     </Styled.Content1Grid>
                     <Styled.IconGrid>
                         <Styled.IconSubGrid>
-                            <Styled.FaceBook width={16} height={0} color='#FFF'/>
-                            <Styled.Twitter width={16} height={0} color='#FFF' />
-                            <Styled.Instagram width={16} height={0} color='#FFF' />
+                            <Styled.FaceBook width={16} height={0} />
+                            <Styled.Twitter width={16} height={0} />
+                            <Styled.Instagram width={16} height={0} />
                         </Styled.IconSubGrid>
                     </Styled.IconGrid>
                     <Styled.Content2Grid>
@@ -30,8 +30,8 @@ const Footer: VFC = () => {
                     <Styled.CopyrightGrid>© 2018 Dept Agency</Styled.CopyrightGrid>
                 </Styled.FooterGrid>
             </Styled.FooterContainer>
-            <Styled.ArrowTopSection>
-                <Styled.Container><Styled.ArrowTop height={72} color='blue'/></Styled.Container>
+            <Styled.ArrowTopSection href="#hero-section">
+                <Styled.Container><Styled.ArrowTop height={0} color='blue'/></Styled.Container>
                 Top
             </Styled.ArrowTopSection>
         </Styled.ContainerFlex>

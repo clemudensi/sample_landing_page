@@ -61,13 +61,12 @@ const Content2Grid = styled.div`
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-    font-size: calc(${props  => props.theme.factor(1)} + 0.5vw/50%);
+    font-size: calc(${props  => props.theme.factor(1.2)} + 0.2vw);
 
     @media ${device.mobileL} {
         inline-size: 200px;
         overflow-wrap: break-word;
         display: grid;
-        font-size: 1rem;
         grid-row-gap: .7rem;
     }
 `;
@@ -124,12 +123,13 @@ const FooterLogoGrid = styled.div`
     }
 `;
 
-const ArrowTopSection = styled.div`
+const ArrowTopSection = styled.a`
     color: ${({theme}) => theme.colors.primary};
     text-align: center;
     font-size: ${({theme}) => theme.factor(3)};
     text-transform: uppercase;
     width: 5%;
+    text-decoration: none;
 
     @media ${device.mobileL} {
         display: none;

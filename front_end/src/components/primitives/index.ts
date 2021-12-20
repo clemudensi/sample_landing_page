@@ -5,3 +5,4 @@ export * from './footer';
 export * from './form';
 export * from './menu-overlay';
 export * from './primitives';
+export * from './works';

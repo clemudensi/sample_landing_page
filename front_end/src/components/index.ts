@@ -7,3 +7,4 @@ export * from './hero';
 export * from './icons';
 export * from './menu';
 export * from './primitives';
+export * from './works';

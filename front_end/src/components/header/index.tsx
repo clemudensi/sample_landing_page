@@ -1,8 +1,10 @@
 import { VFC, useState } from 'react';
 import * as Styled from 'components';
+import { useStickyHeader } from 'hooks';
 
 const Header: VFC = () => {
     const [open, setOpen] = useState(false);
+    const { headerRef, isSticky } = useStickyHeader();
 
     const toggleMenu = () => {
         setOpen(!open)
@@ -12,15 +14,22 @@ const Header: VFC = () => {
         <>
             <Styled.NavHeader>
                 <Styled.ContainerFlex>
-                    <Styled.DeptLogoBlack width={72} />
+                    {
+                        !isSticky && <Styled.DeptLogoBlack width={72} />
+                    }
                     <Styled.ContainerEnd>
-                        <Styled.MenuText>menu</Styled.MenuText>
+                        {
+                            !isSticky && <Styled.MenuText>menu</Styled.MenuText>
+                        }
                         <Styled.HamburgerIcon openMenu={toggleMenu} width={15} />
                     </Styled.ContainerEnd>
                 </Styled.ContainerFlex>
-                <Styled.HorizontalLine width='100%' height='.05rem' color='black' />
+                {
+                    !isSticky && <Styled.HorizontalLine width='100%' height='.05rem' color='black' />
+                }
             </Styled.NavHeader>
             <Styled.MenuDrawer open={open} closeMenu={toggleMenu} />
+            <div ref={headerRef} />
         </>
     )
 };
