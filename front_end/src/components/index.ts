@@ -7,5 +7,5 @@ export * from './hero';
 export * from './icons';
 export * from './menu';
 export * from './primitives';
-export * from './view-case';
+export * from './works/view-case';
 export * from './works';

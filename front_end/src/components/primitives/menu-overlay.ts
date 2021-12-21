@@ -39,6 +39,14 @@ const MenuCloseButton = styled.div`
     cursor: pointer;
     display: flex;
     justify-content: end;
+
+    @media ${device.mobileL} {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 1.25rem;
+        color: white;
+    }
 `;
 
 const MenuList = styled.ul`
@@ -96,6 +104,10 @@ const DrawerMenu = styled.div`
     box-shadow: 0 0 3px rgb(18 18 18 / 20%);
     -webkit-font-smoothing: antialiased;
     transition: transform 1s ease-in-out,opacity .3s ease-in-out;
+
+    @media ${device.mobileL} {
+        display: block;
+    }
 `;
 
 const LogoGrid = styled.div`

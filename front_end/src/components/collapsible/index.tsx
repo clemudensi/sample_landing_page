@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { VFC, useEffect, useRef, useState } from 'react';
 import * as Styled from 'components';
 import { LOCATIONS } from 'const';
 
-const Collapsible = () => {
+const Collapsible: VFC = () => {
 	const [expanded, setExpanded] = useState(false);
 	const [accordionHeight, setAccordionHeight] = useState(0);
 	const ref = useRef<HTMLDivElement>(null);

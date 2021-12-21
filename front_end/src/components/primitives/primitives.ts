@@ -169,7 +169,7 @@ const SvgContainer = styled.div<{
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        color: ${props => (props.color ? `${props.color}` : 'black')};
+        color: ${props => (props.color ? `${props.color}` : 'inherit')};
         cursor: pointer;
         & svg {
             height: ${props => (props.height ? `calc(${props.height}px + 0.5rem)` : null)};
