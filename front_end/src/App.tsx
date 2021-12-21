@@ -1,6 +1,7 @@
 import { VFC } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Clients, Footer, Form, Header, HeroSection, Works } from 'components';
+import { Header } from 'components';
+import { LandingPage } from 'pages';
 import { theme } from './theme';
 import { GlobalStyles } from './GlobalStyles';
 
@@ -9,11 +10,7 @@ const App: VFC = () => {
 		<ThemeProvider theme={theme}>
 			<GlobalStyles />
 			<Header />
-			<HeroSection />
-			<Works />
-			<Clients />
-			<Form />
-			<Footer />
+			<LandingPage />
 		</ThemeProvider>
 	);
 };

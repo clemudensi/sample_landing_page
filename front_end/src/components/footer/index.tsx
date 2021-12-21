@@ -33,7 +33,7 @@ const Footer: VFC = () => {
                     <Styled.CopyrightGrid>© 2018 Dept Agency</Styled.CopyrightGrid>
                 </Styled.FooterGrid>
             </Styled.FooterContainer>
-            <Styled.ArrowTopSection href="#hero-section">
+            <Styled.ArrowTopSection href="#hero-section" data-testid="top-anchor">
                 <Styled.Container><Styled.ArrowTop height={0} color='blue'/></Styled.Container>
                 Top
             </Styled.ArrowTopSection>

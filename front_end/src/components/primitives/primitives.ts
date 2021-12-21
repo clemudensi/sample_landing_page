@@ -186,7 +186,7 @@ const MenuText = styled.span`
 
 const Button = styled.button<{
     color?: string;
-    width?: string;
+    width?: number;
     padding?: number;
 }>`
     display: inline-block;
