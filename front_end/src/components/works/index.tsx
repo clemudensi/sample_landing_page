@@ -1,12 +1,13 @@
 import { VFC } from 'react';
 import * as Styled from 'components';
-import { ImageWithTextContainer } from 'components';
 import {
-    FLORENSIS,
-    INTEGRATION_COPY,
-    TAPPING_COPY,
+    RETHINK_COPY_1,
+    RETHINK_COPY_2,
     WORK_SECTION_1
 } from 'const';
+import { Rethink } from './rethink-section-1';
+import { RethinkCopy } from './rethink-section-2';
+import { Testimonial } from './testimonial';
 
 const Works: VFC = () => {
     return (
@@ -21,29 +22,23 @@ const Works: VFC = () => {
                         WORK_SECTION_1.map((work, index) =>
                             <Styled.Container key={index}>
                                 <Styled.ImageContainer src={work.image} />
-                                <Styled.DefaultTypography fontSize='0.8' color='#939393' transform="uppercase" fontWeight={700}>{work.name}</Styled.DefaultTypography>
+                                <Styled.DefaultTypography fontSize='0.8' color='#939393' transform="uppercase" fontWeight={700}>
+                                    {work.name}
+                                </Styled.DefaultTypography>
+                                <Styled.ViewMore />
                                 <Styled.DefaultTypography fontSize='1.2'>{work.title}</Styled.DefaultTypography>
-                                <Styled.DefaultTypography fontSize='0.6' color='#1A18F7' transform="uppercase" fontWeight={700}>View more</Styled.DefaultTypography>
                             </Styled.Container>
                         )
                     }
                 </Styled.GridCol2>
                 <Styled.DefaultSectionWrapper>
-                    <ImageWithTextContainer>
-                        <Styled.ImageContainer src={FLORENSIS} />
-                        <Styled.WorksTextBox>
-                            <Styled.Container>
-                                <Styled.DefaultTypography fontSize='0.8' color='#939393' transform="uppercase" fontWeight={700}>{TAPPING_COPY.name}</Styled.DefaultTypography>
-                                <Styled.DefaultTypography fontSize='1.2'>{TAPPING_COPY.content}</Styled.DefaultTypography>
-                                <Styled.DefaultTypography fontSize='0.6' color='#1A18F7' transform="uppercase" fontWeight={700}>View more</Styled.DefaultTypography>
-                            </Styled.Container>
-                            <Styled.Container>
-                                <Styled.DefaultTypography fontSize='0.8' color='#939393' transform="uppercase" fontWeight={700}>{INTEGRATION_COPY.name}</Styled.DefaultTypography>
-                                <Styled.DefaultTypography fontSize='1.2'>{INTEGRATION_COPY.content}</Styled.DefaultTypography>
-                                <Styled.DefaultTypography fontSize='0.6' color='#1A18F7' transform="uppercase" fontWeight={700}>View more</Styled.DefaultTypography>
-                            </Styled.Container>
-                        </Styled.WorksTextBox>
-                    </ImageWithTextContainer>
+                    <Rethink imageDetails={RETHINK_COPY_1.imageDetails} textCopy={RETHINK_COPY_1.textCopy} />
+                </Styled.DefaultSectionWrapper>
+                <Styled.DefaultSectionWrapper>
+                    <RethinkCopy imageDetails={RETHINK_COPY_2.imageDetails} textCopy={RETHINK_COPY_2.textCopy} />
+                </Styled.DefaultSectionWrapper>
+                <Styled.DefaultSectionWrapper>
+                    <Testimonial />
                 </Styled.DefaultSectionWrapper>
             </Styled.ShowWorksContainer>
         </Styled.DefaultSectionWrapper>

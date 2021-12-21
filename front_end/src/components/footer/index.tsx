@@ -27,6 +27,9 @@ const Footer: VFC = () => {
                         <span>VAT: NL 8552.47.502.B01</span>
                         <span>Terms and conditions</span>
                     </Styled.Content2Grid>
+                    <Styled.HRGrid>
+                        <Styled.HorizontalLine color='#808080' height='1px'/>
+                    </Styled.HRGrid>
                     <Styled.CopyrightGrid>© 2018 Dept Agency</Styled.CopyrightGrid>
                 </Styled.FooterGrid>
             </Styled.FooterContainer>

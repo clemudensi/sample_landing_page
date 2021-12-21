@@ -71,10 +71,10 @@ const FormLabel = styled.label`
 `;
 
 const FormHeader = styled.span`
-    font-size: 10vh;
+    font-size: calc(3vw + 1rem);
     text-transform: uppercase;
-    max-width: 15%;
-    margin-right: 8vw;
+    max-width: 23%;
+    overflow-wrap: break-word;
 
     @media ${device.mobileL} {
         display: block;

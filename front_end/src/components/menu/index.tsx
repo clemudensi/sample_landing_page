@@ -12,7 +12,7 @@ const MenuDrawer: VFC<OverlayProps> = ({ open, closeMenu }) => {
         <Styled.MenuOverlay open={open}>
             <Styled.DrawerMenu>
                 <Styled.LogoGrid>
-                    <Styled.DeptLogoWhite />
+                    <Styled.DeptLogoWhite height={50} width={90}/>
                 </Styled.LogoGrid>
                 <Styled.ContactGrid>
                     <Styled.GetInTouch>Get in Touch</Styled.GetInTouch>
@@ -33,9 +33,9 @@ const MenuDrawer: VFC<OverlayProps> = ({ open, closeMenu }) => {
                 <Styled.LocationGrid>
                     <Styled.Collapsible />
                 </Styled.LocationGrid>
-                <Styled.LogoGrid>
+                <Styled.CloseButton>
                     <Styled.MenuCloseButton onClick={closeMenu}>&times;</Styled.MenuCloseButton>
-                </Styled.LogoGrid>
+                </Styled.CloseButton>
             </Styled.DrawerMenu>
         </Styled.MenuOverlay>
     )

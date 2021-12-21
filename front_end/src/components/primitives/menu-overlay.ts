@@ -35,11 +35,10 @@ const MenuLinks = styled.li`
 `;
 
 const MenuCloseButton = styled.div`
-    position: absolute;
-    top: 1.25rem;
-    right: 2.75rem;
     font-size: 3.8rem;
     cursor: pointer;
+    display: flex;
+    justify-content: end;
 `;
 
 const MenuList = styled.ul`
@@ -81,7 +80,7 @@ const DrawerMenu = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(4,auto);
     grid-template-areas:
-        "logo logo"
+        "logo close"
         "contact menu"
         "location menu"
         "location social";
@@ -118,6 +117,10 @@ const ContactGrid = styled.a`
 
 const DrawerLinks = styled.div`
     grid-area: menu;
+`;
+
+const CloseButton = styled.div`
+    grid-area: close;
 `;
 
 const SocialGrid = styled.div`
@@ -170,6 +173,7 @@ const LocationList = styled.li`
 `;
 
 export {
+    CloseButton,
     ContactGrid,
     DrawerLinks,
     DrawerMenu,

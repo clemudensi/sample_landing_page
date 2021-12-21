@@ -14,10 +14,11 @@ const FooterContainer = styled.div`
 const FooterGrid = styled.div`
     display: grid;
     grid-template-columns: 30% 40% 30%;
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
         "logo content1 icons"
-        "logo content2 copyright";
+        "line line line"
+        "none content2 copyright";
     grid-row-gap: ${({theme}) => theme.factor(4)};
     padding: 4rem 5rem;
     z-index: 99;
@@ -136,6 +137,10 @@ const ArrowTopSection = styled.a`
     }
 `;
 
+const HRGrid = styled.div`
+    grid-area: line;
+`;
+
 export {
     ArrowTopSection,
     Content1Grid,
@@ -145,6 +150,7 @@ export {
     FooterContainer,
     FooterLogoGrid,
     FooterGrid,
+    HRGrid,
     IconGrid,
     IconSubGrid
 };

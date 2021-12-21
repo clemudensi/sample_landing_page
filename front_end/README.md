@@ -20,6 +20,8 @@ Some of the images for in the works section can't be extracted/downloaded, leadi
 * introduce CSS Library such as Tailwind to reduce CSS-Boiler plates
 * Abstraction of components and improved reusability
 * abstract form validation into a reusable hook
+* Add break-points as `::root` pseudo class
+* optimize break-point for all modern screen sizes (use of css library)
 
 
 ### Architectural decision

@@ -18,19 +18,54 @@ const WorksTextBox = styled.div`
     margin: 0 2vw;
 `;
 
-const ImageWithTextContainer = styled.div`
+const ImageWithTextContainer = styled.div<{direction?: string;}>`
     display: grid;
-    grid-template-columns: 65% 30%;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+        "img content"
+        "details content";
     grid-gap: 1.5vw;
 
     @media ${device.mobileL} {
-        grid-template-columns: 1fr;
+        display: block;
     }
+`;
+
+
+const ImageWithTextInverted = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+        "content img"
+        "content details";
+    grid-gap: 1.5vw;
+
+    @media ${device.mobileL} {
+        display: block;
+    }
+`;
+
+const WorksGridImage = styled.div`
+    grid-area: img;
+`;
+
+const WorksGridContent = styled.div`
+    grid-area: content;
+`;
+
+const WorksGridDetails = styled.div`
+    grid-area: details;
 `;
 
 export {
     ImageWithTextContainer,
+    ImageWithTextInverted,
     ShowWorks,
     ShowWorksContainer,
-    WorksTextBox
+    WorksTextBox,
+    WorksGridContent,
+    WorksGridDetails,
+    WorksGridImage
 };

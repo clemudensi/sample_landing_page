@@ -33,7 +33,6 @@ const ContainerFlex = styled.div`
 	display: flex;
 	width: 100%;
 	align-items: center;
-    justify-content: space-between;
 `;
 
 const Container = styled.div`
@@ -82,7 +81,7 @@ const HeroButton = styled.div`
 `;
 
 const HorizontalLine = styled.hr<HtmlAttr>`
-    width: ${(props) => props.color };
+    width: ${(props) => props.width };
     text-align: left;
     margin-left: 0;
     border: none;
@@ -118,6 +117,11 @@ const CartTitle = styled.span`
 const ContainerEnd = styled.div`
 	margin-left: auto;
 `;
+
+const ContainerFlexRight = styled.div`
+    display: flex;
+    text-align: right;
+`
 
 const SubTitle = styled.span`
     font-size: ${({theme}) => theme.factor(2)};
@@ -160,15 +164,16 @@ const SvgContainer = styled.div<{
     height?: number
     width?: number
     }>`
-        height: "auto";
-        width: "auto";
+        height: auto;
+        width: auto;
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        color: ${props => (props.color ? `${props.color}` : 'black')};
         cursor: pointer;
         & svg {
-            height: ${props => (props.height ? `calc(6vw/${props.height} + 5vw)` : null)};
-            width: ${props => (props.width ? `calc(1.5vw + ${props.width}px)` : `calc(4vw/0.5)`)};
+            height: ${props => (props.height ? `calc(${props.height}px + 0.5rem)` : null)};
+            width: ${props => (props.width ? `calc(.2vw + ${props.width}px)` : `.5rem`)};
         }
 `;
 
@@ -182,7 +187,7 @@ const MenuText = styled.span`
 const Button = styled.button<{
     color?: string;
     width?: string;
-    padding?: string;
+    padding?: number;
 }>`
     display: inline-block;
     color: ${({theme}) => theme.colors.white};
@@ -211,7 +216,7 @@ const DefaultTypography = styled.div<{
 `;
 
 const DefaultSectionWrapper = styled.div`
-    margin: 3vw 0;
+    margin: 3rem 0;
 `;
 
 const GridCol2 = styled.div`
@@ -228,6 +233,7 @@ export {
     ContainerFlex,
     ContentCardWrapper,
     ContainerEnd,
+    ContainerFlexRight,
     ContainerResizable,
     DefaultSectionWrapper,
     DefaultTypography,
